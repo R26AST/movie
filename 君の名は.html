@@ -576,11 +576,11 @@
 
     // Let's create youtube player
     var player;
-    
+
+    play.addEventListener('click', () => {    
     document.querySelector(".poster").style.display = "none";
     document.getElementById("player").style.display = "block";
 
-    play.addEventListener('click', () => {
     function onYouTubePlayerAPIReady() {
        //play.addEventListener('click', () => {
      //   document.querySelector(".poster").style.display = "none";
