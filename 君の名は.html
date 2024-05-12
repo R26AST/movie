@@ -588,12 +588,17 @@ fScriptTag.parentNode.insertBefore(tag, fScriptTag);
            videoId: '3KR8_igDs1Y',
            playerVars:{'mute' : 0,'autoplay' : 1, 'hd' : 1080},
            events: {
+            'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange
           }
         });
     //});
    // }
   });
+
+  function onPlayerReady(event) {
+        event.target.playVideo();
+  }
 
     // when video ends
     function onPlayerStateChange(event) {      
