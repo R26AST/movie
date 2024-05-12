@@ -565,20 +565,20 @@
   <script src="./assets/js/script.js"></script>
   <script src = "http://www.youtube.com/iframe_api"></script>
 <script>
-var tag = document.createElement('script');
-tag.src = "http://www.youtube.com/iframe_api";
-
-var fScriptTag = document.getElementsByTagName('script')[0];
-fScriptTag.parentNode.insertBefore(tag, fScriptTag);
+  play.addEventListener('click', function() {
+    var tag = document.createElement('script');
+    tag.src = "http://www.youtube.com/iframe_api";
+    
+    var fScriptTag = document.getElementsByTagName('script')[0];
+    fScriptTag.parentNode.insertBefore(tag, fScriptTag);
 
     // Let's create youtube player
     var player;
     let play = document.getElementById("play");
 
-  play.addEventListener('click', function() {
     document.querySelector(".poster").style.display = "none";
     document.querySelector("#player").style.display = "block";
-    //function onYouTubePlayerAPIReady() {
+    function onYouTubePlayerAPIReady() {
        //play.addEventListener('click', () => {
      //   document.querySelector(".poster").style.display = "none";
         //document.querySelector("#player").style.display = "block";
@@ -593,7 +593,7 @@ fScriptTag.parentNode.insertBefore(tag, fScriptTag);
           }
         });
     //});
-   // }
+   }
   });
 
   function onPlayerReady(event) {
