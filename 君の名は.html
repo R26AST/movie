@@ -565,7 +565,7 @@
   <script src="./assets/js/script.js"></script>
   <script src = "http://www.youtube.com/iframe_api"></script>
 <script>
-  play.addEventListener('click', function() {
+ // play.addEventListener('click', function() {
     var tag = document.createElement('script');
     tag.src = "http://www.youtube.com/iframe_api";
     
@@ -579,7 +579,7 @@
     document.querySelector(".poster").style.display = "none";
     document.querySelector("#player").style.display = "block";
     function onYouTubePlayerAPIReady() {
-       //play.addEventListener('click', () => {
+       play.addEventListener('click', () => {
      //   document.querySelector(".poster").style.display = "none";
         //document.querySelector("#player").style.display = "block";
           new YT.Player('player', {
@@ -592,9 +592,9 @@
             'onStateChange': onPlayerStateChange
           }
         });
-    //});
+    });
    }
-  });
+ // });
 
   function onPlayerReady(event) {
         event.target.playVideo();
