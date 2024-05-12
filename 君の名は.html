@@ -567,7 +567,7 @@
 <script>
   let play = document.getElementById("play");
   
-  play.addEventListener('click', function() {
+  //play.addEventListener('click', function() {
     var tag = document.createElement('script');
     tag.src = "http://www.youtube.com/iframe_api";
     
@@ -578,7 +578,9 @@
     var player;
     
     document.querySelector(".poster").style.display = "none";
-    document.querySelector("#player").style.display = "block";
+    document.getElementById("player").style.display = "block";
+
+    play.addEventListener('click', () => {
     function onYouTubePlayerAPIReady() {
        //play.addEventListener('click', () => {
      //   document.querySelector(".poster").style.display = "none";
