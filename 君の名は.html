@@ -160,7 +160,7 @@
 
           <figure class="movie-detail-banner">
             
-            <div class="poster">   
+            <div class="poster" style="display: block">   
             <button class="play-btn" id="play">
               <ion-icon name="play-circle-outline"></ion-icon>
             </button>
@@ -576,10 +576,12 @@ fScriptTag.parentNode.insertBefore(tag, fScriptTag);
     let play = document.getElementById("play");
 
   play.addEventListener('click', function() {
+    document.querySelector(".poster").style.display = "none";
+    document.querySelector("#player").style.display = "block";
     function onYouTubePlayerAPIReady() {
        //play.addEventListener('click', () => {
-       document.querySelector(".poster").style.display = "none";
-        document.querySelector("#player").style.display = "block";
+     //   document.querySelector(".poster").style.display = "none";
+        //document.querySelector("#player").style.display = "block";
         player = new YT.Player('player', {
            //height: '100%',
            width: '100%',
