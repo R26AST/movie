@@ -577,14 +577,14 @@
     // Let's create youtube player
     var player;
 
-    //play.addEventListener('click', () => {    
-    //document.querySelector(".poster").style.display = "none";
-    //document.getElementById("player").style.display = "block";
+    play.addEventListener('click', () => {    
+    document.querySelector(".poster").style.display = "none";
+    document.getElementById("player").style.display = "block";
 
     function onYouTubePlayerAPIReady() {
-       play.addEventListener('click', () => {
-        document.querySelector(".poster").style.display = "none";
-        document.getElementById("player").style.display = "block";
+      // play.addEventListener('click', () => {
+        //document.querySelector(".poster").style.display = "none";
+    //    document.getElementById("player").style.display = "block";
            player = new YT.Player('player', {
            //height: '100%',
            width: '100%',
