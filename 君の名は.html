@@ -598,16 +598,15 @@
       $(".player").show();
       //event.target.playVideo();
       //player.playVideo();
-      const UnMuted = setTimeout(unMute, 1000);
+      const UnMuted = setTimeout(unMute, 2000);
       
-      if (player.isPlaying()) {
-         player.unMute();
-      } 
     });
  // }
 
     function unMute() {
+      if(player.isMuted()) {
        player.unMute();
+      }
     }
 
     // when video ends
