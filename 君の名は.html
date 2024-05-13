@@ -171,7 +171,7 @@
             
             <div class="player" style="display: none">
              <!-- <iframe id="video" src="https://www.youtube.com/embed/3KR8_igDs1Y?enablejsapi=1&html5=1&autoplay=1" width="100%" heigth="150%" title="「君の名は。」予告2" frameborder="0" allowfullscreen></iframe>-->
-              <iframe id="video" src="https://www.youtube.com/embed/3KR8_igDs1Y?enablejsapi=1&autoplay=1&rel=0" width="100%" height="150%" title="「君の名は。」予告2" frameborder="0" allowfullscreen></iframe>          
+              <iframe id="video" src="https://www.youtube.com/embed/3KR8_igDs1Y?enablejsapi=1&autoplay=1&mute=1" width="100%" height="150%" title="「君の名は。」予告2" frameborder="0" allowfullscreen></iframe>          
             </div>
 
           </figure>
@@ -583,8 +583,8 @@
            //height: '100%',
            width: '100%',
            //videoId: '3KR8_igDs1Y',
-           playerVars: {'mute' : 1,'autoplay' : 1, 'hd' : 1080},
-           //playerVars:{'mute' : 0, 'hd' : 1080},
+           //playerVars: {'mute' : 1,'autoplay' : 1, 'hd' : 1080},
+           playerVars:{'hd' : 1080},
            events: {
            // 'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange
@@ -602,7 +602,7 @@
       function unMute() {
         player.unMute();
       }
-     /* if (player.isMuted()) {
+      /*if (player.isPlayed()) {
          player.unMute();
       } else {
          player.mute();
