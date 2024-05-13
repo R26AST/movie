@@ -1,0 +1,67 @@
+<div id="player" style="display: none">
+  <iframe id="video" src="https://www.youtube.com/embed/3KR8_igDs1Y?enablejsapi=1&html5=1&vq=hd1080&autoplay=0" width="100%" height="100%" title="「君の名は。」予告2" frameborder="0" style="" allowfullscreen></iframe>
+  
+</div>
+<button id="ply-btn">Play</button>
+
+<!--
+<script src = "http://www.youtube.com/iframe_api"></script>
+<script type="text/javascript">
+
+var tag = document.createElement('script');
+tag.src = "http://www.youtube.com/iframe_api";
+
+var fScriptTag = document.getElementsByTagName('script')[0];
+fScriptTag.parentNode.insertBefore(tag, fScriptTag);
+
+    // Let's create youtube player
+    var player;
+    var ply = document.getElementById("ply-btn");
+    
+    //function onYouTubePlayerAPIReady() {
+       ply.addEventListener('click', function (){
+         player = new YT.Player('player', {
+           //height: '768',
+           //width: '1024',
+           videoId: '3KR8_igDs1Y',
+           playerVars:{'mute' : 0,'autoplay':1},
+           events: {
+            'onStateChange': onPlayerStateChange
+          }
+        });
+    });
+   // }
+
+    // when video ends
+    function onPlayerStateChange(event) {      
+      if (event.data == 0)
+             window.location.href = 'https://www.duckduckgo.com';
+    }
+
+</script>-->
+
+
+<script>
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/player_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  let play = document.getElementById("ply-btn");
+  let videos = document.querySelector("#player");
+  var player;
+  function onYouTubePlayerAPIReady() {
+    player = new YT.Player('video', {
+        events: {
+            'onReady': onPlayerReady
+        }
+    });
+}
+  function onPlayerReady(event) {
+  play.addEventListener('click', () => {
+    videos.style.display = "block";
+    player.playVideo();
+  });
+  }
+  
+</script>
