@@ -593,10 +593,13 @@
   let play = document.querySelector(".play-btn");
   
   function onPlayerReady(event) {
-    play.addEventListener('click', () => {
-      document.querySelector(".poster").style.display = "none";
-      document.querySelector("#player").style.display = "block";
+   // play.addEventListener('click', () => {
+    $(".play-btn").click(function() {
+      //document.querySelector(".poster").style.display = "none";
+     // document.querySelector("#player").style.display = "block";
        // event.target.playVideo();
+      $(".poster").css("display", "none");
+      $("#player").css("display", "none");
       player.playVideo();
     });
   }
@@ -612,6 +615,8 @@
 
   </script>
   <script src="./assets/js/script.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
   <!-- 
     - ionicon link
