@@ -1,3 +1,12 @@
+<div class="poster" style="display: block">   
+            <img src="https://r26ast.github.io/movie/assets/images/君の名は/君の名は.jpg" alt="君の名は movie poster">
+              
+            <button class="play-btn" id="play">
+              <ion-icon name="play-circle-outline"></ion-icon>
+            </button>
+                    
+</div>
+
 <div id="player" style="display: none">
   <iframe id="video" src="https://www.youtube.com/embed/3KR8_igDs1Y?enablejsapi=1&html5=1" width="100%" height="" title="「君の名は。」予告2" frameborder="0" style="" allowfullscreen></iframe>
   
@@ -55,7 +64,7 @@ tag.src = "https://www.youtube.com/player_api";
 var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-  let play = document.getElementById("ply-btn");
+  let play = document.getElementById("play");
   let videos = document.querySelector("#player");
   var player;
   function onYouTubePlayerAPIReady() {
@@ -69,6 +78,7 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 }
   function onPlayerReady(event) {
   play.addEventListener('click', () => {
+    document.querySelector(".poster").style.display = "none";
     videos.style.display = "block";
    // event.target.playVideo();
    player.playVideo();
