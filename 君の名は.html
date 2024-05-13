@@ -564,7 +564,6 @@
     - custom js link
   -->
   <script src="./assets/js/script.js"></script>
-  <script src = "http://www.youtube.com/iframe_api"></script>
 <script>
  
     var tag = document.createElement('script');
@@ -602,7 +601,7 @@
  });
 
   function onPlayerReady(event) {
-    play.addEventListener('click', () => {
+    btn.addEventListener('click', () => {
       document.querySelector(".poster").style.display = "none";
       document.getElementById("player").style.display = "block";
        // event.target.playVideo();
