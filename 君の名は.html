@@ -160,16 +160,16 @@
 
           <figure class="movie-detail-banner">
             
-            <div class="poster" style="display: block">   
+            <div class="poster">   
             <img src="./assets/images/君の名は/君の名は.jpg" alt="君の名は movie poster">
               
-            <button class="play-btn" id="play">
+            <button class="play-btn">
               <ion-icon name="play-circle-outline"></ion-icon>
             </button>
                     
             </div>
             
-            <div id="player" style="display: none">
+            <div class="player" style="display: none">
              // <iframe id="video" src="https://www.youtube.com/embed/3KR8_igDs1Y?enablejsapi=1&html5=1" width="100%" title="「君の名は。」予告2" frameborder="0" allowfullscreen></iframe>
               <iframe id="video" src="https://www.youtube.com/embed/3KR8_igDs1Y?enablejsapi=1&html5=1" width="100%" title="「君の名は。」予告2" frameborder="0" allowfullscreen></iframe>
             </div>
@@ -578,11 +578,10 @@
     var player;
    
     function onYouTubePlayerAPIReady() {
-           player = new YT.Player('video', {
-           //height: '100%',
+           player = new YT.Player('video', {         
            width: '100%',
            //videoId: '3KR8_igDs1Y',
-           playerVars:{'mute' : 0,'autoplay' : 1, 'hd' : 1080},
+           playerVars: {'mute' : 0,'autoplay' : 1, 'hd' : 1080},
           // playerVars:{'mute' : 0, 'hd' : 1080},
            events: {
             'onReady': onPlayerReady,
@@ -591,16 +590,10 @@
         });
      }
 
-  let play = document.querySelector(".play-btn");
-  
   function onPlayerReady(event) {
-   // play.addEventListener('click', () => {
-    $(".play-btn").click(function() {
-      //document.querySelector(".poster").style.display = "none";
-     // document.querySelector("#player").style.display = "block";
-      
+    $(".play-btn").click(function() {      
       $(".poster").hide();
-      $("#player").show();
+      $(".player").show();
       event.target.playVideo();
     });
   }
@@ -609,7 +602,7 @@
     function onPlayerStateChange(event) {      
       if (event.data == 0){
            //window.location.href = 'url';
-           document.querySelector("#player").style.display = "none";
+           document.querySelector(".player").style.display = "none";
            document.querySelector(".poster").style.display = "block";        
       }
     }
