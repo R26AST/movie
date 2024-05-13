@@ -160,7 +160,7 @@
 
           <figure class="movie-detail-banner">
             
-            <div class="poster">   
+            <div class="poster" style="display: block">   
             <img src="./assets/images/君の名は/君の名は.jpg" alt="君の名は movie poster">
               
             <button class="play-btn">
@@ -592,8 +592,8 @@
 
   function onPlayerReady(event) {
     $(".play-btn").click(function() {      
-      $(".poster").hide();
-      $(".player").show();
+      $(".poster").toggle();
+      $(".player").toggle();
       event.target.playVideo();
     });
   }
