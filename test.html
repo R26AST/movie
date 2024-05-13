@@ -1,5 +1,5 @@
 <div id="player" style="display: none">
-  <iframe id="video" src="https://www.youtube.com/embed/3KR8_igDs1Y?enablejsapi=1&html5=1&vq=hd1080&autoplay=0" width="100%" height="100%" title="「君の名は。」予告2" frameborder="0" style="" allowfullscreen></iframe>
+  <iframe id="video" src="https://www.youtube.com/embed/3KR8_igDs1Y?enablejsapi=1&html5=1&vq=hd1080&autoplay=0" width="100%" height="" title="「君の名は。」予告2" frameborder="0" style="" allowfullscreen></iframe>
   
 </div>
 <button id="ply-btn">Play</button>
@@ -52,6 +52,7 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
   var player;
   function onYouTubePlayerAPIReady() {
     player = new YT.Player('video', {
+        playerVars : {'mute' : 0,'autoplay':1, 'hd' : 1080},
         events: {
             'onReady': onPlayerReady
         }
