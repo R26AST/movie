@@ -583,12 +583,21 @@ fScriptTag.parentNode.insertBefore(tag, fScriptTag);
            videoId: '3aL0gDZtFbE',
            playerVars:{'mute' : 0,'autoplay':1, 'hd' : 1080},
            events: {
+            'onReady' : onPlayerReady,
             'onStateChange': onPlayerStateChange
           }
         });
     });
     }
-    
+
+  function onPlayerReady(event) {
+    $("#play").click(function () {
+    $(".poster").hide();
+    $("#player").show();
+    event.target.playVideo();
+  // player.playVideo();
+  });
+  }
 
     // when video ends
     function onPlayerStateChange(event) {      
