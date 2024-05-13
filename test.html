@@ -4,7 +4,7 @@
 </div>
 <button id="ply-btn">Play</button>
 
-
+<!--
 <script src = "http://www.youtube.com/iframe_api"></script>
 <script type="text/javascript">
 
@@ -46,9 +46,9 @@ fScriptTag.parentNode.insertBefore(tag, fScriptTag);
              window.location.href = 'https://www.duckduckgo.com';
     }
 
-</script>
+</script>-->
 
-<!--
+
 <script>
 var tag = document.createElement('script');
 tag.src = "https://www.youtube.com/player_api";
@@ -62,7 +62,8 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
     player = new YT.Player('video', {
         playerVars : {'mute' : 0, 'hd' : 1080},
         events: {
-            'onReady': onPlayerReady
+            'onReady': onPlayerReady,
+            'onStateChange' : onPlayerStateChange
         }
     });
 }
@@ -73,6 +74,11 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
    player.playVideo();
   });
   }
+
+  function onPlayerStateChange(event) {      
+      if (event.data == 0)
+             window.location.href = 'https://www.google.com';
+  }
   
 </script>
--->
+
