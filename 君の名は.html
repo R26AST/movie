@@ -565,13 +565,12 @@
   <!-- 
     - custom js link
   -->
-  <script src="./assets/js/script.js"></script>
-<script>
+  <script>
  
     var tag = document.createElement('script');
     tag.src = "http://www.youtube.com/iframe_api";
     
-    var fScriptTag = document.getElementsByTagName('script')[1];
+    var fScriptTag = document.getElementsByTagName('script')[0];
     fScriptTag.parentNode.insertBefore(tag, fScriptTag);
 
     // Let's create youtube player
@@ -611,8 +610,8 @@
       }
     }
 
-</script>
-
+  </script>
+  <script src="./assets/js/script.js"></script>
 
   <!-- 
     - ionicon link
