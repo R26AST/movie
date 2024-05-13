@@ -586,13 +586,13 @@
            //playerVars: {'mute' : 1,'autoplay' : 1, 'hd' : 1080},
            //playerVars:{'mute' : 0, 'hd' : 1080},
            events: {
-            'onReady': onPlayerReady,
+           // 'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange
           }
         });
      }
 
-  function onPlayerReady(event) {
+  //function onPlayerReady(event) {
     $(".play-btn").click(function() {      
       $(".poster").hide();
       $(".player").show();
@@ -604,7 +604,7 @@
          player.mute();
       }
     });
-  }
+ // }
 
     // when video ends
     function onPlayerStateChange(event) {      
