@@ -94,7 +94,7 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
   var player;
   function onYouTubePlayerAPIReady() {
     player = new YT.Player('video', {
-        playerVars : {'mute' : 0, 'hd' : 1080},
+        playerVars : {'mute' : 0, 'autoplay' : 1, 'hd' : 1080},
         events: {
             'onReady': onPlayerReady,
             'onStateChange' : onPlayerStateChange
@@ -104,8 +104,8 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
   function onPlayerReady(event) {
 //  play.addEventListener('click', () => {
     $("#play").click(function () {
-    $(".poster").hide();
-    $("#player").show();
+    $(".poster").toggle();
+    $("#player").toggle();
     event.target.playVideo();
   // player.playVideo();
   });
