@@ -593,9 +593,10 @@
 
   function onPlayerReady(event) {
     $(".play-btn").click(function() {      
-      $(".poster").toggle();
-      $(".player").toggle();
+      $(".poster").hide();
+      $(".player").show();
       event.target.playVideo();
+      player.playVideo();
     });
   }
 
