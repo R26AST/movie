@@ -61,7 +61,8 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
   function onPlayerReady(event) {
   play.addEventListener('click', () => {
     videos.style.display = "block";
-    player.playVideo();
+    event.target.playVideo();
+   // player.playVideo();
   });
   }
   
