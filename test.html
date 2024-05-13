@@ -105,14 +105,16 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
   play.addEventListener('click', () => {
     document.querySelector(".poster").style.display = "none";
     videos.style.display = "block";
-   // event.target.playVideo();
-   player.playVideo();
+    event.target.playVideo();
+  // player.playVideo();
   });
   }
 
   function onPlayerStateChange(event) {      
       if (event.data == 0)
-             window.location.href = 'https://www.google.com';
+             //window.location.href = 'https://www.google.com';
+        document.querySelector(".poster").style.display = "none";
+        document.querySelector("#player").style.display = "block";
   }
   
 </script>
