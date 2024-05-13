@@ -566,7 +566,8 @@
   
 <script>
 var tag = document.createElement('script');
-tag.src = "http://www.youtube.com/iframe_api";
+tag.src = "https://www.youtube.com/player_api";
+//tag.src = "http://www.youtube.com/iframe_api";
 
 var fScriptTag = document.getElementsByTagName('script')[0];
 fScriptTag.parentNode.insertBefore(tag, fScriptTag);
@@ -576,10 +577,7 @@ fScriptTag.parentNode.insertBefore(tag, fScriptTag);
     var play = document.getElementById("play");
     
     function onYouTubePlayerAPIReady() {
-       play.addEventListener('click', () => {
-       document.querySelector(".poster").style.display = "none";
-        document.querySelector("#player").style.display = "block";
-        player = new YT.Player('player', {
+       player = new YT.Player('player', {
            //height: '100%',
            width: '100%',
            videoId: '3aL0gDZtFbE',
