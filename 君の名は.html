@@ -597,8 +597,12 @@
       $(".poster").hide();
       $(".player").show();
       //event.target.playVideo();
-      player.playVideo();
-      player.unMute();
+      //player.playVideo();
+      if (player.isMuted()) {
+         player.unMute();
+      } else {
+         player.mute();
+      }
     });
   }
 
