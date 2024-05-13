@@ -18,20 +18,28 @@ fScriptTag.parentNode.insertBefore(tag, fScriptTag);
     var player;
     var ply = document.getElementById("ply-btn");
     
-    //function onYouTubePlayerAPIReady() {
-       ply.addEventListener('click', function (){
+    function onYouTubePlayerAPIReady() {
+      // ply.addEventListener('click', function (){
          player = new YT.Player('player', {
            //height: '768',
            //width: '1024',
            videoId: '3KR8_igDs1Y',
            playerVars:{'mute' : 0,'autoplay':1},
            events: {
+            'onReady' : onPlayerReady,
             'onStateChange': onPlayerStateChange
           }
         });
-    });
-   // }
+  //  });
+   }
 
+  function onPlayerReady(event) {
+  ply.addEventListener('click', () => {
+    document.getElementById("player").style.display = "block";
+   // event.target.playVideo();
+   player.playVideo();
+  });
+  }
     // when video ends
     function onPlayerStateChange(event) {      
       if (event.data == 0)
