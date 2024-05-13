@@ -607,9 +607,13 @@
     function onPlayerStateChange(event) {      
       if (event.data == 0){
            player.stopVideo();
-           $(".poster").show();
-           $(".player").hide();
+        setTimeout(done, 500);       
       }
+    }
+
+    function done() {
+      $(".poster").show();
+      $(".player").hide();
     }
 
   </script>
