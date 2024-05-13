@@ -565,9 +565,7 @@
   <script src="./assets/js/script.js"></script>
   <script src = "http://www.youtube.com/iframe_api"></script>
 <script>
-  let play = document.getElementById("play");
-  
-  //play.addEventListener('click', function() {
+ 
     var tag = document.createElement('script');
     tag.src = "http://www.youtube.com/iframe_api";
     
@@ -576,10 +574,11 @@
 
     // Let's create youtube player
     var player;
+    let play = document.getElementById("play");
 
-    play.addEventListener('click', () => {    
+    /*play.addEventListener('click', () => {    
     document.querySelector(".poster").style.display = "none";
-    document.getElementById("player").style.display = "block";
+    document.getElementById("player").style.display = "block";*/
 
     function onYouTubePlayerAPIReady() {
       // play.addEventListener('click', () => {
@@ -600,8 +599,12 @@
  });
 
   function onPlayerReady(event) {
-        event.target.playVideo();
-    player.playVideo();
+    play.addEventListener('click', () => {
+      document.querySelector(".poster").style.display = "none";
+      document.getElementById("player").style.display = "block";
+       // event.target.playVideo();
+      player.playVideo();
+    });
   }
 
     // when video ends
